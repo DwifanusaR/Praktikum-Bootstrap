@@ -1,112 +1,109 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>praktikum boostrap</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-  </head>
-  <body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dwifawisp Bakery & Dessert</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
 
-<nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm p-3">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">portofolio</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">kontak</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-        </li>
-      </ul>
+  <nav class="navbar">
+    <a href="#home" class="logo">
+      <span class="logo-icon">🧁</span>
+      <span><strong>Dwifawisp</strong><small>BAKERY & DESSERT</small></span>
+    </a>
+
+    <div class="nav-links">
+      <a class="active" href="#home">Home</a>
+      <a href="#kategori">Kategori</a>
+      <a href="#menu">Menu</a>
+      <a href="#kontak">Kontak</a>
     </div>
-  </div>
-</nav>
 
-<div id="home" class="bg-info bg-gradient text-white text-center py-5">
-    <div class="container">
-        <span class="badge text-bg-warning"> semester 3</span>
-        <h1>Halo, saya Dwifa Nusa Rahmani </h1>
-        <p>Mahasiswa pendidikan sistem teknologi informasi</p>
-        <button type="button" class="btn btn-light">klik, untuk lihat keahian saya!</button>
+    <div class="nav-right">
+      <input id="search" type="search" placeholder="⌕  Cari menu...">
+      <button class="nav-icon" id="cart-button">🛒 <span id="cart-count">0</span></button>
+      <button class="nav-icon" id="favorite-button">♡</button>
     </div>
-</div>
+  </nav>
 
-<div id="skill" class="container py-5">
-  <h2 class="text-center">Keahlian Saya</h2>
-  <div class="row py-4">
-    <!-- Card 1 -->
-    <div class="col-md-4">
-      <div class="card border-primary border-2 shadow-sm h-100">
-        <div class="card-body bg-primary text-white">
-          <h5 class="card-title">HTML dan CSS</h5>
-          <p class="card-text">Dasar membangun struktur web dan tampilan halaman.</p>
-          <span class="badge text-bg-light">Front-End</span>
-        </div>
+  <header class="hero" id="home">
+    <div class="hero-content">
+      <p class="eyebrow">FRESHLY BAKED, ALWAYS SWEETER</p>
+      <h1>Welcome to<br><span>Dwifawisp♡</span></h1>
+      <p>Dari dessert cantik hingga minuman segar, setiap gigitan dibuat dengan bahan berkualitas dan penuh cinta.</p>
+      <a href="#menu" class="hero-button">Lihat Menu <span>→</span></a>
+    </div>
+    <span class="sweet-note">Sweet<br>Moments ♡</span>
+  </header>
+
+  <section class="categories" id="kategori">
+    <a href="#menu" class="category" data-category="Ice Cream"><span>🍦</span>Ice Cream</a>
+    <a href="#menu" class="category" data-category="Cupcake"><span>🧁</span>Cupcake</a>
+    <a href="#menu" class="category" data-category="Cake & Dessert"><span>🍰</span>Cake & Dessert</a>
+    <a href="#menu" class="category" data-category="Roti & Pastry"><span>🥐</span>Roti & Pastry</a>
+    <a href="#menu" class="category" data-category="Cookies & Camilan"><span>🍪</span>Cookies & Camilan</a>
+    <a href="#menu" class="category" data-category="Pie & Tart"><span>🥧</span>Pie & Tart</a>
+    <a href="#menu" class="category" data-category="Minuman Dingin"><span>🥤</span>Minuman Dingin</a>
+    <a href="#menu" class="category" data-category="Minuman Hangat"><span>☕</span>Minuman Hangat</a>
+    <a href="#menu" class="category" data-category="Paket Hampers"><span>🎁</span>Paket Hampers</a>
+  </section>
+
+  <main class="menu-section" id="menu">
+    <div class="menu-heading">
+      <div>
+        <p class="eyebrow">♥ OUR MENU</p>
+        <h2>Menu Favorit <span>♡</span></h2>
+        <p class="menu-subtitle">Pilihan manis untuk setiap suasana spesial.</p>
+      </div>
+      <div class="menu-actions">
+        <button id="show-all">Lihat Semua　→</button>
+        <button class="round-button" id="scroll-left">‹</button>
+        <button class="round-button pink" id="scroll-right">›</button>
       </div>
     </div>
 
-    <!-- Card 2 -->
-    <div class="col-md-4">
-      <div class="card border-primary border-2 shadow-sm h-100">
-        <div class="card-body bg-danger text-white">
-          <h5 class="card-title">HTML dan CSS</h5>
-          <p class="card-text">Dasar membangun struktur web dan tampilan halaman.</p>
-          <span class="badge text-bg-light">Front-End</span>
-        </div>
-      </div>
+    <div class="filters" id="filters">
+      <button class="filter active" data-category="Semua">Semua</button>
+      <button class="filter" data-category="Ice Cream">Ice Cream</button>
+      <button class="filter" data-category="Cupcake">Cupcake</button>
+      <button class="filter" data-category="Cake & Dessert">Cake & Dessert</button>
+      <button class="filter" data-category="Roti & Pastry">Roti & Pastry</button>
+      <button class="filter" data-category="Cookies & Camilan">Cookies & Camilan</button>
+      <button class="filter" data-category="Pie & Tart">Pie & Tart</button>
+      <button class="filter" data-category="Minuman Dingin">Minuman Dingin</button>
+      <button class="filter" data-category="Minuman Hangat">Minuman Hangat</button>
+      <button class="filter" data-category="Paket Hampers">Paket Hampers</button>
     </div>
 
-    <!-- Card 3 -->
-    <div class="col-md-4">
-      <div class="card border-primary border-2 shadow-sm h-100">
-        <div class="card-body bg-success text-white">
-          <h5 class="card-title">HTML dan CSS</h5>
-          <p class="card-text">Dasar membangun struktur web dan tampilan halaman.</p>
-          <span class="badge text-bg-light">Front-End</span>
-        </div>
-      </div>
+    <div class="product-track" id="product-track"></div>
+    <p id="empty-message" hidden>Menu tidak ditemukan.</p>
+  </main>
+
+  <section class="contact-section" id="kontak">
+    <div class="contact-card">
+      <p class="eyebrow">♥ GET IN TOUCH</p>
+      <h2>Kontak <span>♡</span></h2>
+      <form id="form-kontak">
+        <label class="form-field">♙
+          <input type="text" name="nama" placeholder="Nama Lengkap" required>
+        </label>
+        <label class="form-field">✉
+          <input type="email" name="email" placeholder="Email" required>
+        </label>
+        <label class="form-field message-field">♧
+          <textarea name="pesan" placeholder="Pesan" required></textarea>
+        </label>
+        <button class="send-button" type="submit">➤　Kirim Pesan</button>
+      </form>
+      <p id="form-status"></p>
     </div>
-  </div>
+  </section>
 
-  <div class="alert alert-info text-center mt-4" role="alert">
-    Mau belajar semua ini di promnet!
-  </div>
-</div>
+  <footer>Dwifawisp Bakery & Dessert · Dibuat dengan ♡</footer>
 
-<!-- Contact -->
-
-<div id="kontak" class="bg-light py-5">
-  <div class="container">
-    <h2 class="text-center mb-4">Kontak Saya</h2>
-    <form class="mx-auto bg-white p-4 rounded shadow-sm" style="max-width: 500px;">
-      <div class="mb-3">
-        <label for="nama" class="form-label">Masukkan Nama</label>
-        <input type="text" class="form-control" id="nama" placeholder="Dwifa Nusa Rahmani">
-      </div>
-
-      <div class="mb-3">
-        <label for="pesan" class="form-label">Pesan</label>
-        <textarea class="form-control" id="pesan" rows="3" placeholder="Masukkan pesan Anda di sini"></textarea>
-      </div>
-
-      <button type="submit" class="btn btn-primary w-100">Kirim</button>
-    </form>
-  </div>
-</div>
-
-<!--footer-->
-<footer class="bg-dark text-light text-center py-3">
-    <small> &copy 2026 - praktikum pemprograman internet, pertemuan 6</small>
-</footer>
+  <script src="app.js"></script>
+</body>
+</html>

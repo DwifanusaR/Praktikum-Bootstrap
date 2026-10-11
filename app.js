@@ -1,369 +1,268 @@
-console.log("Bismillah Praktikum Dimulai");
+const produk = [
+  // ICE CREAM
+  { nama: "Ice Cream Cokelat", kategori: "Ice Cream", harga: 10000, foto: "photo-1563805042-7684c019e1cb" },
+  { nama: "Ice Cream Stroberi", kategori: "Ice Cream", harga: 10000, foto: "photo-1497034825429-c343d7c6a68f" },
+  { nama: "Ice Cream Matcha", kategori: "Ice Cream", harga: 12000, foto: "photo-1563805042-7684c019e1cb" },
+  { nama: "Ice Cream Vanilla", kategori: "Ice Cream", harga: 9000, foto: "photo-1497034825429-c343d7c6a68f" },
 
-// aktivitas 1 DOM SELECTION / Seleksi elemen
-// Kenapa kita harus seleksi karna "menangkap" atau mengambil id/class
-// Mengambil elemen html tersebut lalu disimpan di variabel javascript
+  // CUPCAKE
+  { nama: "Cupcake Stroberi", kategori: "Cupcake", harga: 12000, foto: "photo-1426869884541-df7117556757" },
+  { nama: "Cupcake Cokelat", kategori: "Cupcake", harga: 12000, foto: "photo-1486427944299-d1955d23e34d" },
+  { nama: "Cupcake Vanilla", kategori: "Cupcake", harga: 10000, foto: "photo-1519869325930-281384150729" },
+  { nama: "Cupcake Red Velvet", kategori: "Cupcake", harga: 13000, foto: "photo-1587668178277-295251f900ce" },
 
-// 1. mengambil elemen judul utama & sub judul
-// document.getElementById("...") mengambil berdasarkan atribut id.
+  // CAKE & DESSERT
+  { nama: "Strawberry Shortcake", kategori: "Cake & Dessert", harga: 18000, foto: "photo-1464349095431-e9a21285b5f3" },
+  { nama: "Chocolate Cake", kategori: "Cake & Dessert", harga: 18000, foto: "photo-1578985545062-69928b1d9587" },
+  { nama: "Dessert Box", kategori: "Cake & Dessert", harga: 15000, foto: "photo-1571877227200-a0d98ea607e9" },
+  { nama: "Cheesecake", kategori: "Cake & Dessert", harga: 17000, foto: "photo-1533134242443-d4fd215305ad" },
+  { nama: "Tiramisu", kategori: "Cake & Dessert", harga: 16000, foto: "photo-1571877227200-a0d98ea607e9" },
+  { nama: "Red Velvet Cake", kategori: "Cake & Dessert", harga: 20000, foto: "photo-1586788680434-30d324b2d46f" },
 
-const judulUtama = document.getElementById("judul-utama"); //menangkap: <h1 id="judul-utama">
+  // ROTI & PASTRY
+  { nama: "Croissant Butter", kategori: "Roti & Pastry", harga: 12000, foto: "photo-1555507036-ab1f4038808a" },
+  { nama: "Chocolate Croissant", kategori: "Roti & Pastry", harga: 14000, foto: "photo-1530610476181-d83430b64dcd" },
+  { nama: "Roti Cokelat", kategori: "Roti & Pastry", harga: 9000, foto: "photo-1509440159596-0249088772ff" },
+  { nama: "Cinnamon Roll", kategori: "Roti & Pastry", harga: 13000, foto: "photo-1509365465985-25d11c17e812" },
 
-// document.querySelector("#...")
-// tanda # artinnya ID
+  // COOKIES & CAMILAN
+  { nama: "Choco Chip Cookies", kategori: "Cookies & Camilan", harga: 10000, foto: "photo-1499636136210-6f4ee915583e" },
+  { nama: "Cookies Red Velvet", kategori: "Cookies & Camilan", harga: 11000, foto: "photo-1499636136210-6f4ee915583e" },
+  { nama: "Brownies Bite", kategori: "Cookies & Camilan", harga: 12000, foto: "photo-1606313564200-e75d5e30476c" },
+  { nama: "Macaron Mix", kategori: "Cookies & Camilan", harga: 15000, foto: "photo-1558326567-98ae2405596b" },
+  { nama: "Churros", kategori: "Cookies & Camilan", harga: 12000, foto: "photo-1624371414361-e670edf4898d" },
 
-const subjudul = document.querySelector("#sub-judul"); // menangkap: <p id="sub-judul">
+  // PIE & TART
+  { nama: "Pie Stroberi", kategori: "Pie & Tart", harga: 14000, foto: "photo-1464305795204-6f5bbfc7fb81" },
+  { nama: "Lemon Tart", kategori: "Pie & Tart", harga: 15000, foto: "photo-1464305795204-6f5bbfc7fb81" },
+  { nama: "Apple Pie", kategori: "Pie & Tart", harga: 16000, foto: "photo-1562007908-17c67e878c88" },
 
-// 2. Mengambil elemen pada kartu 1 (Kartu Manipulasi Teks & Style)
-const teksPreview = document.getElementById("teks-preview");
-const boxPreview = document.getElementById("box-preview");
-const cardManipulasi = document.getElementById("card-manipulasi");
+  // MINUMAN DINGIN
+  { nama: "Strawberry Milk", kategori: "Minuman Dingin", harga: 15000, foto: "photo-1544145945-f90425340c7e" },
+  { nama: "Iced Chocolate", kategori: "Minuman Dingin", harga: 14000, foto: "photo-1517701604599-bb29b565090c" },
+  { nama: "Iced Matcha Latte", kategori: "Minuman Dingin", harga: 16000, foto: "photo-1515823064-d6e0c04616a7" },
+  { nama: "Iced Coffee Latte", kategori: "Minuman Dingin", harga: 15000, foto: "photo-1461023058943-07fcbe16d735" },
+  { nama: "Mango Smoothie", kategori: "Minuman Dingin", harga: 16000, foto: "photo-1505252585461-04db1eb84625" },
 
-// 3. menambil elemen tombol - tombol aksi pada kartu 1
-const BtnUbahTeks = document.getElementById("btn-ubah-teks");
-const btnToggleWarna = document.getElementById("btn-toggle-warna");
-const btnReset = document.getElementById("btn-reset");
+  // MINUMAN HANGAT
+  { nama: "Cappuccino", kategori: "Minuman Hangat", harga: 15000, foto: "photo-1509042239860-f550ce710b93" },
+  { nama: "Hot Matcha Latte", kategori: "Minuman Hangat", harga: 16000, foto: "photo-1515823064-d6e0c04616a7" },
+  { nama: "Teh Melati", kategori: "Minuman Hangat", harga: 8000, foto: "photo-1544787219-7f47ccb76574" },
+  { nama: "Caramel Latte", kategori: "Minuman Hangat", harga: 17000, foto: "photo-1509042239860-f550ce710b93" },
 
-// 4. Mengambil elemen pada kartu 2 (Fitur catatan dinamis / To Do List sederhana)
-const inputCatatan = document.getElementById("input-catatan");
-const btnTambah = document.getElementById("btn-tambah");
-const daftarCatatan = document.getElementById("daftar-catatan");
-const jumlahCatatan = document.getElementById("jumlah-catatan");
-const pesanKosong = document.getElementById("pesan-kosong");
-const cardDinamis = document.getElementById("card-dinamis");
+  // PAKET HAMPERS
+  { nama: "Hampers Sweet Pink", kategori: "Paket Hampers", harga: 85000, foto: "photo-1549465220-1a8b9238cd48" },
+  { nama: "Hampers Cookies", kategori: "Paket Hampers", harga: 65000, foto: "photo-1499636136210-6f4ee915583e" },
+  { nama: "Hampers Dessert", kategori: "Paket Hampers", harga: 95000, foto: "photo-1578985545062-69928b1d9587" }
+];
 
-// Aktivitas ke 2 manipulasi teks & style (card 1)
-// addEventListener("click", function() {...}) artinya adalah tolong dengarkan dulu / tunggu
-// sampai di klik user. jika di klik jalankan perintah dalam function
+const track = document.getElementById("product-track");
+const search = document.getElementById("search");
+const emptyMessage = document.getElementById("empty-message");
+const cartCount = document.getElementById("cart-count");
 
-// A. mengubah teks & warna secara langsung
+let kategoriAktif = "Semua";
+let kataKunci = "";
+let hanyaFavorit = false;
+let semuaProduk = false;
+let keranjang = 0;
+const favorit = new Set();
 
-BtnUbahTeks.addEventListener("click", function () {
-    // . innertext = mengganti atau mengisi secara  langsung teks yang ada didalam html
-    teksPreview.innerText = "Hebat! Teks ini berhasil diubah pake DOM!";
-
-    // style.color = mengubah warna teks secara langsung (Inline style)
-    teksPreview.style.color = "#4138ee";
-
-    // console.log = mencetak pesan di console style
-    console.log("[DOM] Teks preview telah diperbaharui!");
-});
-
-//B. Manipulasi Class css menggunakan
-btnToggleWarna.addEventListener("click", function () {
-    //.classlist.toggle("nama-class")= fitur saklar otomatis (on/off)
-    boxPreview.classList.toggle("active-mode");
-    cardManipulasi.classList.toggle("highlight");
-
-    console.log("DOM Berhasil di Switch");
-});
-
-//C. Mengembalikan (reset) Teks ke kondisi
-btnReset.addEventListener("click", function () {
-    //1. kembalikan teks semula teks asli
-    teksPreview.innerText = "Halo! Teks ini siap diubah oleh Javascript";
-
-    //2. kosongkan warna agar kembali ke warna css bawaan
-    teksPreview.style.color = "";
-
-    //3. Hapus class khusus untuk mengembalikan .classlight
-    boxPreview.classList.remove("active-mode");
-    cardManipulasi.classList.remove("highlight");
-
-    console.log("DOM Tampilan di reset");
-});
-
-// Aktivitas 3 & 4 : elemen dinamin dan event handling (TO-DO-LIST sederhana)
-// di aktivitas ini kita belajar elemen html, lalu menempelkan ke layar (ul)
-
-// langkah 1. membuat variabel penampung angka jumlah catatan
-// "let" digunakan unutk nilai variabel yang akan berubah bisa bertambah bisa berkurang (counting)
-
-let totalCatatan = 0;
-let totalSelesai = 0;
-
-// langkah 2. fungsi update angka counter &pesan status
-function perbaruiJumlah() {
-    // masukkan jumlah angka total catatan terbaru ke dalam tag <span id="jumlah-catatan">
-    jumlahCatatan.innerText = totalCatatan;
-
-    // conditional statement berupa apakah catatannya itu kosong / 0?
-    if (totalCatatan === 0) {
-        // jika 0: hapus class "hidden" supaya teks "belum ada catatan" muncul ke layar
-        pesanKosong.classList.remove("hidden");
-    } else {
-        // jika > 0: tambahkan class "hidden" untuk menyembunyikan pesan agar teks "belum ada catatam " tersembungi
-        pesanKosong.classList.add("hidden");
-    }
-
-    // memperbarui angka statistik
-    document.getElementById("total-tugas").innerText = totalCatatan;
-    document.getElementById("tugas-selesai").innerText = totalSelesai;
-    document.getElementById("tugas-belum").innerText =
-        totalCatatan - totalSelesai;
+function formatRupiah(angka) {
+  return "Rp" + angka.toLocaleString("id-ID");
 }
 
-// langkah 3. dungsi utama logika tambah catatan baru
-function tambahCatatan() {
-    // 3.1 inputCatatan.value fungsi untuk mengambil teks yang diketik oleh user
-    const isiTeks = inputCatatan.value.trim();
-
-    // 3.2 validasi input jika isi teks kosonh maka tampilan alert
-    if (isiTeks === "") {
-        alert("catatan kamu tidak boleh kosong!");
-        return;
-    }
-
-    // 3.3 document.createElement("li") membuat memori di javascript secara dinamis
-    const liBaru = document.createElement("li");
-    liBaru.className = "note-item";
-
-    // 3.4 membuat tombol selesai, teks tugas dan tombol hapus
-    const btnSelesai = document.createElement("button");
-    btnSelesai.className = "check-btn";
-    btnSelesai.innerText = "○";
-
-    const teksTugas = document.createElement("span");
-    teksTugas.className = "teks-tugas";
-    teksTugas.innerText = isiTeks;
-
-    const btnHapus = document.createElement("button");
-    btnHapus.className = "btn-hapus";
-    btnHapus.innerText = "🗑";
-
-    // mengatur tampilan tombol checklist
-    btnSelesai.style.border = "2px solid #94a3b8";
-    btnSelesai.style.backgroundColor = "white";
-    btnSelesai.style.color = "#94a3b8";
-    btnSelesai.style.borderRadius = "50%";
-    btnSelesai.style.width = "30px";
-    btnSelesai.style.height = "30px";
-    btnSelesai.style.fontSize = "20px";
-    btnSelesai.style.cursor = "pointer";
-    btnSelesai.style.flexShrink = "0";
-
-    // membuat isi tugas menjadi satu baris yang rapi
-    teksTugas.style.flex = "1";
-    teksTugas.style.marginLeft = "12px";
-
-    // memasukkan elemen ke dalam li
-    liBaru.appendChild(btnSelesai);
-    liBaru.appendChild(teksTugas);
-    liBaru.appendChild(btnHapus);
-
-    // 3.5 event ketika tugas ditandai selesai
-    btnSelesai.addEventListener("click", function () {
-
-        // .classList.toggle = menambahkan / menghapus class selesai
-        teksTugas.classList.toggle("selesai");
-
-        if (teksTugas.classList.contains("selesai")) {
-
-            btnSelesai.innerText = "✓";
-            btnSelesai.style.backgroundColor = "#3b82f6";
-            btnSelesai.style.borderColor = "#3b82f6";
-            btnSelesai.style.color = "white";
-
-            totalSelesai++;
-
-        } else {
-
-            btnSelesai.innerText = "○";
-            btnSelesai.style.backgroundColor = "white";
-            btnSelesai.style.borderColor = "#94a3b8";
-            btnSelesai.style.color = "#94a3b8";
-
-            totalSelesai--;
-        }
-
-        perbaruiJumlah();
-    });
-
-    // 3.6 klik pada teks tugas juga bisa menandai selesai
-    teksTugas.addEventListener("click", function () {
-        btnSelesai.click();
-    });
-
-    // 3.7 tambahkan event listener pada tombol hapus
-    btnHapus.addEventListener("click", function () {
-
-        // jika tugas sudah selesai, kurangi jumlah selesai
-        if (teksTugas.classList.contains("selesai")) {
-            totalSelesai--;
-        }
-
-        liBaru.remove();
-
-        totalCatatan--;
-
-        perbaruiJumlah();
-
-        console.log('dom catatan "' + isiTeks + '" dihapus');
-    });
-
-    // 3.8 appendChild = memasukkan element li kedalam wadah <ul id ="daftar-catatan">
-    daftarCatatan.appendChild(liBaru);
-
-    // 3.9 mengosongkan kembali isi kolom input
-    inputCatatan.value = "";
-
-    //3.10 totalCatatan++ artinya tambah nilai total catatan sebanyak 1
-    totalCatatan++;
-
-    perbaruiJumlah();
-
-    console.log('dom catatan baru di tambahkan: ' + isiTeks);
+function alamatFoto(id) {
+  return `https://images.unsplash.com/${id}?auto=format&fit=crop&w=400&h=350&q=80`;
 }
 
-// langkah 4: event listener klik tombol + "tambah"
-// ketika tombol "+ tambah" diklik oleh user, maka jalankan fungsi tambah catatan()
-btnTambah.addEventListener("click", function () {
-    tambahCatatan();
-});
+function tampilkanProduk() {
+  const hasil = produk.filter(item => {
+    const cocokKategori =
+      kategoriAktif === "Semua" || item.kategori === kategoriAktif;
 
-// langkah 5: event listener keyboard "enter" pada kolom input
-// ketika user mengetik di kolom input dan melepas tombol keyboard ('event keyup')
-inputCatatan.addEventListener("keyup", function (event) {
+    const cocokKata =
+      item.nama.toLowerCase().includes(kataKunci.toLowerCase()) ||
+      item.kategori.toLowerCase().includes(kataKunci.toLowerCase());
 
-    // periksa apakah tombol keyboard yang di tekan user adalah enter?
-    if (event.key === "Enter") {
-        tambahCatatan();
+    const cocokFavorit = !hanyaFavorit || favorit.has(item.nama);
+
+    return cocokKategori && cocokKata && cocokFavorit;
+  });
+
+  const daftar = semuaProduk ? hasil : hasil.slice(0, 16);
+
+  track.innerHTML = "";
+  emptyMessage.hidden = daftar.length !== 0;
+
+  daftar.forEach(item => {
+    const card = document.createElement("article");
+    card.className = "product-card";
+
+    const imageWrap = document.createElement("div");
+    imageWrap.className = "product-image-wrap";
+
+    const img = document.createElement("img");
+    img.className = "product-image";
+    img.src = alamatFoto(item.foto);
+    img.alt = item.nama;
+    img.loading = "lazy";
+
+    img.onerror = function () {
+      this.onerror = null;
+      this.src = "https://placehold.co/400x350/fff0f2/9b315d?text=" +
+        encodeURIComponent(item.nama);
+    };
+
+    const favoriteButton = document.createElement("button");
+    favoriteButton.className = "favorite-product";
+    favoriteButton.type = "button";
+    favoriteButton.setAttribute("aria-label", "Tambah ke favorit");
+    favoriteButton.textContent = favorit.has(item.nama) ? "♥" : "♡";
+
+    if (favorit.has(item.nama)) {
+      favoriteButton.classList.add("selected");
     }
+
+    favoriteButton.addEventListener("click", () => {
+      if (favorit.has(item.nama)) {
+        favorit.delete(item.nama);
+      } else {
+        favorit.add(item.nama);
+      }
+
+      tampilkanProduk();
+    });
+
+    imageWrap.append(img, favoriteButton);
+
+    const info = document.createElement("div");
+    info.className = "product-info";
+
+    const name = document.createElement("p");
+    name.className = "product-name";
+    name.textContent = item.nama;
+    name.title = item.nama;
+
+    const bottom = document.createElement("div");
+    bottom.className = "product-bottom";
+
+    const price = document.createElement("span");
+    price.className = "product-price";
+    price.textContent = formatRupiah(item.harga);
+
+    const cartButton = document.createElement("button");
+    cartButton.className = "add-cart";
+    cartButton.type = "button";
+    cartButton.textContent = "🛒";
+    cartButton.setAttribute("aria-label", "Tambah " + item.nama + " ke keranjang");
+
+    cartButton.addEventListener("click", () => {
+      keranjang++;
+      cartCount.textContent = keranjang;
+      cartButton.textContent = "✓";
+
+      setTimeout(() => {
+        cartButton.textContent = "🛒";
+      }, 700);
+    });
+
+    bottom.append(price, cartButton);
+    info.append(name, bottom);
+    card.append(imageWrap, info);
+    track.appendChild(card);
+  });
+}
+
+document.querySelectorAll(".filter").forEach(button => {
+  button.addEventListener("click", () => {
+    kategoriAktif = button.dataset.category;
+
+    document.querySelectorAll(".filter").forEach(filter => {
+      filter.classList.toggle("active", filter === button);
+    });
+
+    document.querySelectorAll(".category").forEach(category => {
+      category.classList.toggle(
+        "selected",
+        category.dataset.category === kategoriAktif
+      );
+    });
+
+    semuaProduk = false;
+    tampilkanProduk();
+    track.scrollLeft = 0;
+  });
 });
 
+document.querySelectorAll(".category").forEach(button => {
+  button.addEventListener("click", () => {
+    kategoriAktif = button.dataset.category;
+    hanyaFavorit = false;
 
-// Aktivitas 6 : membuat statistik tugas
+    document.querySelectorAll(".filter").forEach(filter => {
+      filter.classList.toggle(
+        "active",
+        filter.dataset.category === kategoriAktif
+      );
+    });
 
-// mengambil judul daftar tugas
-const judulDaftar = cardDinamis.querySelector(".list-container h3");
-
-// mengubah tulisan lama menjadi Daftar Tugas
-judulDaftar.innerHTML = "Daftar Tugas";
-
-// membuat tombol statistik
-const tombolStatistik = document.createElement("button");
-
-tombolStatistik.innerText = "📊 Statistik";
-tombolStatistik.className = "btn btn-outline";
-
-// memasukkan tombol statistik ke judul daftar tugas
-judulDaftar.appendChild(tombolStatistik);
-
-
-// membuat box statistik
-const boxStatistik = document.createElement("div");
-
-boxStatistik.className = "box-statistik";
-
-boxStatistik.innerHTML =
-    '<div><strong id="total-tugas">0</strong><br>Total Tugas</div>' +
-    '<div><strong id="tugas-selesai">0</strong><br>Selesai</div>' +
-    '<div><strong id="tugas-belum">0</strong><br>Belum Selesai</div>';
-
-boxStatistik.style.display = "none";
-boxStatistik.style.gridTemplateColumns = "repeat(3, 1fr)";
-boxStatistik.style.alignItems = "center";
-boxStatistik.style.textAlign = "center";
-
-
-// memasukkan box statistik sebelum daftar tugas
-const listContainer = cardDinamis.querySelector(".list-container");
-
-listContainer.insertBefore(boxStatistik, daftarCatatan);
-
-
-// tombol statistik untuk menampilkan / menyembunyikan statistik
-tombolStatistik.addEventListener("click", function () {
-
-    if (boxStatistik.style.display === "none") {
-        boxStatistik.style.display = "grid";
-    } else {
-        boxStatistik.style.display = "none";
-    }
+    tampilkanProduk();
+  });
 });
 
+search.addEventListener("input", () => {
+  kataKunci = search.value.trim();
+  tampilkanProduk();
+});
 
-// Aktivitas 7 : mengubah tampilan halaman menjadi To-Do List
+document.getElementById("show-all").addEventListener("click", () => {
+  semuaProduk = !semuaProduk;
+  document.getElementById("show-all").textContent =
+    semuaProduk ? "Tampilkan Sedikit ↑" : "Lihat Semua　→";
+  tampilkanProduk();
+});
 
-// menyembunyikan kartu praktikum pertama
-cardManipulasi.style.display = "none";
+document.getElementById("scroll-left").addEventListener("click", () => {
+  track.scrollBy({ left: -450, behavior: "smooth" });
+});
 
-// menyembunyikan judul kartu lama
-cardDinamis.querySelector("h2").style.display = "none";
+document.getElementById("scroll-right").addEventListener("click", () => {
+  track.scrollBy({ left: 450, behavior: "smooth" });
+});
 
-// mengubah judul utama
-judulUtama.innerText = "My Daily To-Do List";
+document.getElementById("cart-button").addEventListener("click", () => {
+  alert("Jumlah produk di keranjang: " + keranjang);
+});
 
-// menghilangkan sub judul lama
-subjudul.innerText = "";
+document.getElementById("favorite-button").addEventListener("click", () => {
+  hanyaFavorit = !hanyaFavorit;
+  kategoriAktif = "Semua";
+  semuaProduk = true;
 
-// mengubah placeholder input
-inputCatatan.placeholder = "Masukkan to-do list kamu hari ini...";
+  document.querySelectorAll(".filter").forEach(filter => {
+    filter.classList.toggle(
+      "active",
+      filter.dataset.category === "Semua" && !hanyaFavorit
+    );
+  });
 
-// mengubah tulisan tombol
-btnTambah.innerText = "+ Tambah";
+  document.getElementById("favorite-button").textContent =
+    hanyaFavorit ? "♥" : "♡";
 
-// mengubah pesan ketika belum ada tugas
-pesanKosong.innerText = "Belum ada tugas.";
+  tampilkanProduk();
+  document.getElementById("menu").scrollIntoView({ behavior: "smooth" });
+});
 
+document.getElementById("form-kontak").addEventListener("submit", event => {
+  event.preventDefault();
 
-// Aktivitas 8 : efek sparkle pada judul
+  const nama = event.target.elements.nama.value.trim();
 
-judulUtama.style.position = "relative";
+  document.getElementById("form-status").textContent =
+    `Terima kasih, ${nama}! Pesan kamu berhasil disiapkan.`;
 
-judulUtama.style.textShadow =
-    "0 0 8px rgba(255,255,255,0.9), 0 0 18px rgba(255,255,255,0.5)";
+  event.target.reset();
+});
 
-
-// sparkle kiri
-const sparkleKiri = document.createElement("span");
-sparkleKiri.innerText = "✦";
-sparkleKiri.style.position = "absolute";
-sparkleKiri.style.left = "-38px";
-sparkleKiri.style.top = "5px";
-sparkleKiri.style.color = "white";
-sparkleKiri.style.fontSize = "22px";
-sparkleKiri.style.textShadow = "0 0 10px white";
-
-
-// sparkle kanan
-const sparkleKanan = document.createElement("span");
-sparkleKanan.innerText = "✦";
-sparkleKanan.style.position = "absolute";
-sparkleKanan.style.right = "-38px";
-sparkleKanan.style.top = "5px";
-sparkleKanan.style.color = "white";
-sparkleKanan.style.fontSize = "22px";
-sparkleKanan.style.textShadow = "0 0 10px white";
-
-
-// sparkle atas
-const sparkleAtas = document.createElement("span");
-sparkleAtas.innerText = "✦";
-sparkleAtas.style.position = "absolute";
-sparkleAtas.style.top = "-8px";
-sparkleAtas.style.left = "25%";
-sparkleAtas.style.color = "white";
-sparkleAtas.style.fontSize = "15px";
-sparkleAtas.style.textShadow = "0 0 10px white";
-
-
-// sparkle atas kanan
-const sparkleAtasKanan = document.createElement("span");
-sparkleAtasKanan.innerText = "✦";
-sparkleAtasKanan.style.position = "absolute";
-sparkleAtasKanan.style.top = "-5px";
-sparkleAtasKanan.style.right = "25%";
-sparkleAtasKanan.style.color = "white";
-sparkleAtasKanan.style.fontSize = "14px";
-sparkleAtasKanan.style.textShadow = "0 0 10px white";
-
-
-judulUtama.appendChild(sparkleKiri);
-judulUtama.appendChild(sparkleKanan);
-judulUtama.appendChild(sparkleAtas);
-judulUtama.appendChild(sparkleAtasKanan);
-
-
-// memperbarui jumlah awal
-perbaruiJumlah();
+tampilkanProduk();
