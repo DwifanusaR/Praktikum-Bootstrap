@@ -1,0 +1,265 @@
+/* ============================================================
+   STYLING PRAKTIKUM JAVASCRIPT DOM
+   Theme: Clean, Modern, Soft Blue
+   ============================================================ */
+
+:root {
+    --primary-color: #3b82f6;
+    --primary-hover: #2563eb;
+    --success-color: #4f9d69;
+    --danger-color: #ef6b78;
+    --bg-color: #78aef2;
+    --card-bg: #ffffff;
+    --text-dark: #172554;
+    --text-muted: #64748b;
+    --border-color: #dbe7f5;
+    --radius: 16px;
+    --shadow: 0 10px 25px rgba(30, 64, 175, 0.12);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #9cc7f5, #5d9bed);
+    color: var(--text-dark);
+    line-height: 1.6;
+    padding: 3rem 1rem;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+/* HEADER */
+
+.main-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.badge {
+    display: none;
+}
+
+.main-header h1 {
+    font-family: Georgia, serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
+}
+
+/* HILANGKAN TEKS LAMA */
+
+.main-header p {
+    display: none;
+}
+
+/* GRID */
+
+.grid-container {
+    display: block;
+}
+
+/* CARD */
+
+.card {
+    background-color: rgba(255, 255, 255, 0.96);
+    border-radius: var(--radius);
+    padding: 1.8rem;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+#card-manipulasi {
+    display: none;
+}
+
+/* JUDUL DAFTAR */
+
+.card h2 {
+    font-size: 1.4rem;
+    color: var(--text-dark);
+    margin-bottom: 1.2rem;
+}
+
+.card .desc {
+    display: none;
+}
+
+/* INPUT */
+
+.input-wrapper {
+    display: flex;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.input-wrapper input {
+    flex: 1;
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 11px;
+    font-size: 0.95rem;
+    outline: none;
+    background-color: #ffffff;
+    color: var(--text-dark);
+}
+
+.input-wrapper input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+}
+
+/* TOMBOL */
+
+.btn {
+    padding: 0.75rem 1.3rem;
+    border: none;
+    border-radius: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-success {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-success:hover {
+    background-color: var(--primary-hover);
+}
+
+/* DAFTAR TUGAS */
+
+.list-container {
+    background-color: #f8fbff;
+    border-radius: 13px;
+    padding: 1rem;
+    border: 1px solid #e3edf9;
+}
+
+.list-container h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0;
+    margin-bottom: 1rem;
+}
+
+.list-container h3::before {
+    content: "Daftar Tugas";
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+/* TOMBOL STATISTIK */
+
+.btn-outline {
+    background-color: transparent;
+    border: none;
+    color: var(--text-dark);
+    font-size: 0.9rem;
+}
+
+.btn-outline:hover {
+    background-color: #edf5ff;
+}
+
+/* STATISTIK */
+
+.box-statistik {
+    background-color: #edf5ff !important;
+    border: 1px solid #d7e7fa;
+    border-radius: 12px !important;
+    display: none;
+    margin-bottom: 0.8rem !important;
+    padding: 1rem !important;
+}
+
+.box-statistik div {
+    text-align: center;
+    color: #111827;
+    font-size: 0.9rem;
+}
+
+.box-statistik strong {
+    color: #111827;
+}
+
+/* DAFTAR */
+
+.note-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+}
+
+.note-item {
+    background-color: #ffffff;
+    border: 1px solid #dce8f5;
+    padding: 0.8rem 0.9rem;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.note-item .teks-tugas {
+    cursor: pointer;
+    color: #172554;
+}
+
+/* TUGAS SELESAI */
+
+.note-item .teks-tugas.selesai {
+    text-decoration: line-through;
+    color: #94a3b8;
+}
+
+/* TOMBOL HAPUS */
+
+.note-item .btn-hapus {
+    background-color: #fff0f2;
+    color: var(--danger-color);
+    border: none;
+    padding: 0.4rem 0.7rem;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.note-item .btn-hapus:hover {
+    background-color: #ffe0e4;
+}
+
+/* PESAN KOSONG */
+
+.empty-state {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    padding: 1.5rem 0;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* FOOTER */
+
+.main-footer {
+    display: none;
+}
